@@ -122,6 +122,9 @@ public class enviarhabilidadesActivity extends Activity {
 					
 					//Toast.makeText(getApplicationContext(), idUsuario+' '+movilidad+' '+vap, Toast.LENGTH_LONG).show();
 					
+					movilidad = movilidad.replace(" ", "%20");
+					vap = vap.replace(" ", "%20");
+					
 					String url = "http://gonzalobenoffi.com.ar/eventos/vap.php?idUsuario="+idUsuario+"&movilidad="+movilidad+"&vap="+vap;
 
 					sendInternet_vap(url);
