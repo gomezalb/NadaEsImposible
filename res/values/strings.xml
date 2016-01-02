@@ -1,0 +1,16 @@
+<resources>
+
+    <string name="app_name">Nada es imposible</string>
+    <string name="button_siguiente">Siguiente</string>
+    <string name="textview_bienvenida">Bienvenido a "Nada es imposible"</string>
+    <string name="textview_descripcion">Brindá ayuda a los demás en una actividad específica o general de acuerdo a tu perfil</string>
+    <string name="button_ingresar">Ingresar</string>
+    <string name="button_enviar">Enviar</string>
+    <string name="hint_telefono">Ingrese su teléfono</string>
+    <string name="hint_email">Ingrese su email</string>
+        <string name="hint_nombre">Ingrese su nombre</string>
+         <string name="combo_vap">VAP(virtud de ayuda personal)</string>
+         <string name="edittext_movilidad">Ingrese movilidad</string>
+         <string name="edit_vap">VAP manual</string>
+    
+</resources>

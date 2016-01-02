@@ -1,0 +1,6 @@
+<resources>
+
+    <color name="fondoLayout">#e5df4b</color>
+    <color name="fondoBotones">#212121</color>
+    <color name="textoBotones">#FAFAFA</color>
+</resources>

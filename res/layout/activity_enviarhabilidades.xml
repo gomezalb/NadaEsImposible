@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20sp" >
+
+    <EditText
+        android:id="@+id/editText_movilidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/edittext_movilidad" 
+        android:layout_marginBottom="15sp"
+        >
+
+        <requestFocus />
+    </EditText>
+
+    <RadioGroup
+        android:id="@+id/radiogroup_vap"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/radio_vap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/combo_vap" />
+
+        <Spinner
+            android:id="@+id/spinner_habilidades"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="15sp"
+            android:layout_marginLeft="28sp"
+            
+             />
+
+        <RadioButton
+            android:id="@+id/radio_nuevo_vap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_vap" />
+        
+        <EditText
+        android:id="@+id/editText_nuevo_vap"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginBottom="15sp"
+        android:layout_marginLeft="28sp"
+        
+        />
+
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button_enviar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_enviar"
+        android:background="@color/fondoBotones"
+        android:textColor="@color/textoBotones"
+         />
+
+</LinearLayout>
