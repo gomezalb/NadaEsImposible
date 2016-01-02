@@ -36,9 +36,9 @@ public class laylogin extends Activity {
 		setContentView(R.layout.activity_login);
 
 		SharedPreferences mSharedPreferences;
-		mSharedPreferences = getApplicationContext().getSharedPreferences("prefs", 0);
+		mSharedPreferences = getApplicationContext().getSharedPreferences(Configuracion.misprefs, 0);
 
-		if (!mSharedPreferences.getString("idUsuario", "S/D").equals("S/D")) {
+		if (!mSharedPreferences.getString(Configuracion.idUsuario, "S/D").equals("S/D")) {
 			finish();
 			startActivity(new Intent(laylogin.this, enviarhabilidadesActivity.class));
 		}
@@ -58,8 +58,7 @@ public class laylogin extends Activity {
 
 				String validacion = validarDatos();
 				if (validacion.length() == 0) {
-					String url2 = "http://gonzalobenoffi.com.ar/eventos/login.php?nombre=" + nombre + "&mail=" + mail
-							+ "&telefono=" + telefono;
+					String url2 = "http://gonzalobenoffi.com.ar/eventos/login.php?nombre="+nombre+"&mail="+mail+"&telefono="+telefono;
 
 					showpDialog();
 
@@ -79,13 +78,13 @@ public class laylogin extends Activity {
 								 */
 
 								JSONObject usuario = response.getJSONObject("usuario");
-								String idUsuario = usuario.getString("idUsuario");
+								String idUsuario = usuario.getString(Configuracion.idUsuario);
 								// Toast.makeText(getApplicationContext(),
 								// idUsuario.trim(), Toast.LENGTH_SHORT).show();
 								SharedPreferences mSharedPreferences;
-								mSharedPreferences = getApplicationContext().getSharedPreferences("prefs", 0);
+								mSharedPreferences = getApplicationContext().getSharedPreferences(Configuracion.misprefs, 0);
 								SharedPreferences.Editor editor = mSharedPreferences.edit();
-								editor.putString("idUsuario", idUsuario);
+								editor.putString(Configuracion.idUsuario, idUsuario);
 								editor.commit();
 								finish();
 								startActivity(new Intent(laylogin.this, enviarhabilidadesActivity.class));

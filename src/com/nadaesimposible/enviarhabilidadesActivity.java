@@ -53,9 +53,9 @@ public class enviarhabilidadesActivity extends Activity {
 		setContentView(R.layout.activity_enviarhabilidades);
 		
 		SharedPreferences mSharedPreferences;
-		mSharedPreferences = getApplicationContext().getSharedPreferences("prefs", 0);
+		mSharedPreferences = getApplicationContext().getSharedPreferences(Configuracion.misprefs, 0);
 		
-		idUsuario = mSharedPreferences.getString("idUsuario", "S/D");
+		idUsuario = mSharedPreferences.getString(Configuracion.idUsuario, "S/D");
 		
 		edittext_movilidad = (EditText) findViewById(R.id.editText_movilidad);
 		edittext_nuevo_vap = (EditText) findViewById(R.id.editText_nuevo_vap);
@@ -105,7 +105,7 @@ public class enviarhabilidadesActivity extends Activity {
 				String validacion = validarDatos();
 				if (validacion.length()==0)
 				{
-					String vap = "";
+					String vap = null;
 					String movilidad = edittext_movilidad.getText().toString();
 					
 					SharedPreferences prefs = getSharedPreferences(Configuracion.misprefs,Context.MODE_PRIVATE);
@@ -117,8 +117,10 @@ public class enviarhabilidadesActivity extends Activity {
 					}
 					else
 					{
-						vap = radio_nuevo_vap.getText().toString();
+						vap = edittext_nuevo_vap.getText().toString();
 					}
+					
+					//Toast.makeText(getApplicationContext(), idUsuario+' '+movilidad+' '+vap, Toast.LENGTH_LONG).show();
 					
 					String url = "http://gonzalobenoffi.com.ar/eventos/vap.php?idUsuario="+idUsuario+"&movilidad="+movilidad+"&vap="+vap;
 
@@ -126,6 +128,7 @@ public class enviarhabilidadesActivity extends Activity {
 					
 					edittext_movilidad.setText("");
 					edittext_nuevo_vap.setText("");
+					
 					radio_vap.setChecked(true);
 				}
 				else
@@ -150,7 +153,6 @@ public class enviarhabilidadesActivity extends Activity {
 				// TODO Auto-generated method stub
 				
 				Toast.makeText(getApplicationContext(), "Datos enviados correctamente", Toast.LENGTH_SHORT).show();
-					
 				hidepDialog();
 			}
 		
